@@ -5,19 +5,19 @@
 
 Console.WriteLine("Введите коэффициенты для функции y = k1 * x + b1:");
 Console.Write("k1 = ");
-int k1 = int.Parse(Console.ReadLine());
+double k1 = double.Parse(Console.ReadLine());
 Console.Write("b1 = ");
-int b1 = int.Parse(Console.ReadLine());
+double b1 = double.Parse(Console.ReadLine());
 Console.WriteLine("Введите коэффициенты  для функции y = k2 * x + b2:");
 Console.Write("k2 = ");
-int k2 = int.Parse(Console.ReadLine());
+double k2 = double.Parse(Console.ReadLine());
 Console.Write("b2 = ");
-int b2 = int.Parse(Console.ReadLine());
+double b2 = double.Parse(Console.ReadLine());
 
 void IntersectionPoint(double a1, double c1, double a2, double c2)
 {
-    double x = (c2 - c1) / (a1 - a2);
-    double y = a1 * x + c1;
+    double x = Math.Round((c2 - c1) / (a1 - a2), 1, MidpointRounding.ToZero);
+    double y = Math.Round((a1 * ((c2 - c1) / (a1 - a2)) + c1), 1, MidpointRounding.ToZero);
     Console.Write($"Координата точки пересечения двух прямых y = {a1} * x + {c1} и y = {a2} * x + {c2} равна ({x}; {y})");
 }
 
